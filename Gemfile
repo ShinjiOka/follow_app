@@ -76,3 +76,5 @@ end
 gem "devise"
 
 gem 'propshaft'
+
+gem 'jquery-rails'
