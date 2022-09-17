@@ -11,12 +11,11 @@
         <% else %>
             <% if @user.is_followed_by?(current_user) %>
                 <%= link_to "users/:user_id/relationships", data: { turbo_method: :delete } do %>
-                    <button class="btn btn-danger">フォロー解除</button>
+                    <button class="btn btn-danger">解除</button>
                 <% end %>
             <% else %>
-                <%= link_to "users/:user_id/relationships", data: { turbo_method: :post } do %>
-                    <button class="btn btn-primary">フォロー</button>
-                <% end %>
+                <%= button_to "登録", {controller: 'relationships', action: 'create'}, {method: :post, class: 'btn btn-primary'} %>
+                    <%# <button class="btn btn-primary">フォロー</button> %>
             <% end %>
         <% end %>
     </div>
